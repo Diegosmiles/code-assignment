@@ -85,12 +85,12 @@ Additionally, the terminal will display a list of all drivers with their average
 ## Edge Cases Handled
 The pipeline includes several edge cases that are randomly introduced during the data generation process:
 
-Empty values: Missing lap times or driver names are represented as None.
-Outliers: Extremely high or low lap times (e.g., 0.0, 100.0) are introduced.
-Invalid data: Non-numeric values (e.g., "Invalid", "Error") are included.
-Duplicate values: Some duplicate rows are added to simulate repeated data.
-Numeric driver names: Simulated numeric driver names are added.
-Null driver names: Simulated missing driver names are introduced.
+- Empty values: Missing lap times or driver names are represented as None.
+- Outliers: Extremely high or low lap times (e.g., 0.0, 100.0) are introduced.
+- Invalid data: Non-numeric values (e.g., "Invalid", "Error") are included.
+- Duplicate values: Some duplicate rows are added to simulate repeated data.
+- Numeric driver names: Simulated numeric driver names are added.
+- Null driver names: Simulated missing driver names are introduced.
 
 
 ## Conclusion
