@@ -80,6 +80,7 @@ Hamilton,4.53,4.32
 Alonzo,4.55,4.38
 Verstrappen,4.59,4.50
 ```
+Additionally, the terminal will display a list of all drivers with their average lap time in ascending order
 
 ## Edge Cases Handled
 The pipeline includes several edge cases that are randomly introduced during the data generation process:
