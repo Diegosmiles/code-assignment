@@ -34,7 +34,7 @@ pip install pandas numpy scipy matplotlib seaborn
 ```
 ## Running the Pipeline
 
-# Step 1: Generate Data with Edge Cases
+### Step 1: Generate Data with Edge Cases
 The first step is to generate synthetic F1 lap time data with random values and introduce edge cases (e.g., missing data, outliers, non-numeric driver names, etc.). This step can be done by running 0_data_generation.py or by exploring the corresponding Jupyter notebook 0_data_generation.ipynb for a more interactive walkthrough.
 
 ```bash
@@ -43,28 +43,28 @@ python 0_data_generation.py
 
 This will generate a CSV file (f1_lap_times_with_edge_cases.csv) with the simulated data, including edge cases.
 
-# Step 2: Clean the Data
+### Step 2: Clean the Data
 The next step is to clean the generated data by removing invalid values, duplicates, and outliers. This is done using 1_data_cleaning.py or by running 1_data_cleaning.ipynb to see how the data cleaning process is done interactively.
 ```bash
 python 1_data_cleaning.py
 ```
 This will produce a cleaned version of the data (f1_lap_times_cleaned.csv), which is ready for analysis.
 
-# Step 3: Calculate Top 3 Drivers
+### Step 3: Calculate Top 3 Drivers
 Now that we have the cleaned data, we can calculate the top three drivers based on their average lap times and fastest lap times. This is done by running 2_calculate_avg.py or by exploring 2_calculate_avg.ipynb to understand how the averages and rankings are computed.
 ```bash
 python 2_calculate_avg.py
 ```
 The output will be saved in a CSV file (top_3_drivers.csv) with the top 3 drivers and their lap times.
 
-# Step 4: Orchestrate the Full Process 
+### Step 4: Orchestrate the Full Process 
 If you want to run the full pipeline, including data generation, cleaning, and analysis, you can use the batch_process.py script. This script will orchestrate the execution of all previous steps sequentially.
 ```bash
 python batch_process.py
 ```
 This will generate the necessary data, clean it, and produce the final output (top_3_drivers.csv).
 
-## Output
+### Output
 
 The final output of the pipeline is a CSV file containing the top three drivers, ordered by average lap time in ascending order. Each driver in the output will include their:
 
@@ -82,7 +82,7 @@ Verstrappen,4.59,4.50
 ```
 Additionally, the terminal will display a list of all drivers with their average lap time in ascending order
 
-## Edge Cases Handled
+### Edge Cases Handled
 The pipeline includes several edge cases that are randomly introduced during the data generation process:
 
 - Empty values: Missing lap times or driver names are represented as None.
