@@ -1,0 +1,99 @@
+# F1 Lap Time Processing Pipeline
+
+## Overview
+
+This project is a pipeline designed to process F1 drivers' lap times, calculate their average lap times, and determine the top three drivers based on their performance. The pipeline processes input data from a CSV file, applies various data transformations (including handling edge cases and outliers), and outputs the top three drivers with their fastest and average lap times.
+
+The pipeline is built using Python and consists of multiple scripts that run sequentially to clean, process, and analyze the data. Additionally, for each of the three main Python scripts, there are corresponding Jupyter (IPython) notebooks that provide a more detailed, step-by-step exploration of the logic and model building process.
+
+## Project Structure
+
+The project contains the following main scripts and corresponding Jupyter notebooks:
+
+1. **`0_data_generation.py`** / **`0_data_generation.ipynb`**: Generates synthetic F1 lap time data, introducing edge cases such as missing values, outliers, and invalid data.
+2. **`1_data_cleaning.py`** / **`1_data_cleaning.ipynb`**: Cleans the raw data by removing invalid values, duplicates, and outliers. This step ensures the data is ready for analysis.
+3. **`2_calculate_avg.py`** / **`2_calculate_avg.ipynb`**: Analyzes the cleaned data, calculates the average lap times for each driver, and identifies the top three drivers.
+
+The **Python scripts** (`.py` files) can be run directly, while the **Jupyter notebooks** (`.ipynb` files) provide a more interactive way to see the detailed logic and modeling process behind each step.
+
+## Prerequisites
+
+Before running the pipeline, ensure you have the following dependencies installed:
+
+- Python 3.x
+- pandas
+- numpy
+- scipy
+- matplotlib
+- seaborn
+
+You can install the necessary Python packages using `pip`:
+
+```bash
+pip install pandas numpy scipy matplotlib seaborn
+```
+## Running the Pipeline
+
+# Step 1: Generate Data with Edge Cases
+The first step is to generate synthetic F1 lap time data with random values and introduce edge cases (e.g., missing data, outliers, non-numeric driver names, etc.). This step can be done by running 0_data_generation.py or by exploring the corresponding Jupyter notebook 0_data_generation.ipynb for a more interactive walkthrough.
+
+```bash
+python 0_data_generation.py
+```
+
+This will generate a CSV file (f1_lap_times_with_edge_cases.csv) with the simulated data, including edge cases.
+
+# Step 2: Clean the Data
+The next step is to clean the generated data by removing invalid values, duplicates, and outliers. This is done using 1_data_cleaning.py or by running 1_data_cleaning.ipynb to see how the data cleaning process is done interactively.
+```bash
+python 1_data_cleaning.py
+```
+This will produce a cleaned version of the data (f1_lap_times_cleaned.csv), which is ready for analysis.
+
+# Step 3: Calculate Top 3 Drivers
+Now that we have the cleaned data, we can calculate the top three drivers based on their average lap times and fastest lap times. This is done by running 2_calculate_avg.py or by exploring 2_calculate_avg.ipynb to understand how the averages and rankings are computed.
+```bash
+python 2_calculate_avg.py
+```
+The output will be saved in a CSV file (top_3_drivers.csv) with the top 3 drivers and their lap times.
+
+# Step 4: Orchestrate the Full Process 
+If you want to run the full pipeline, including data generation, cleaning, and analysis, you can use the batch_process.py script. This script will orchestrate the execution of all previous steps sequentially.
+```bash
+python batch_process.py
+```
+This will generate the necessary data, clean it, and produce the final output (top_3_drivers.csv).
+
+## Output
+
+The final output of the pipeline is a CSV file containing the top three drivers, ordered by average lap time in ascending order. Each driver in the output will include their:
+
+Driver Name
+Average Lap Time
+Fastest Lap Time
+
+Example output (top_3_drivers.csv):
+
+```csv
+Driver,avg_lap_time,fastest_lap_time
+Hamilton,4.53,4.32
+Alonzo,4.55,4.38
+Verstrappen,4.59,4.50
+```
+
+## Edge Cases Handled
+The pipeline includes several edge cases that are randomly introduced during the data generation process:
+
+Empty values: Missing lap times or driver names are represented as None.
+Outliers: Extremely high or low lap times (e.g., 0.0, 100.0) are introduced.
+Invalid data: Non-numeric values (e.g., "Invalid", "Error") are included.
+Duplicate values: Some duplicate rows are added to simulate repeated data.
+Numeric driver names: Simulated numeric driver names are added.
+Null driver names: Simulated missing driver names are introduced.
+
+
+## Conclusion
+
+This F1 lap time processing pipeline demonstrates how to handle edge cases, clean data, and perform basic data analysis using Python. The project is modular, with separate scripts for each stage of the pipeline, and is easy to extend for more complex use cases. If you're curious about how the logic is implemented in more detail, you can explore the corresponding Jupyter notebooks (.ipynb files), which provide a step-by-step explanation of the process.
+
+Feel free to clone this repository, contribute improvements, or adapt the pipeline for your own use cases!
